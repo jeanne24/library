@@ -47,11 +47,11 @@ class Library extends Component{
         this.setState({book:book});
     }
 
-    // toggleNewBook(){
-    //     this.setState({
-    //         modalEditNew: !this.state.modalEditNew
-    //     });
-    // }
+    toggleNewBook(){
+        this.setState({
+            modalEditNew: !this.state.modalEditNew
+        });
+    }
 
     handleNewBook(book){
 
@@ -69,7 +69,10 @@ class Library extends Component{
                     <tbody>
                         <Book data={this.state} toggle={this.toggle.bind(this)} toggleEdit = {this.toggleEditBook.bind(this)}/>
                         <ViewModal data={this.state} toggle={this.toggle.bind(this)}/>
-                        <NewEditModal data={this.state} toggle={this.toggleEditBook.bind(this)} addnew={this.handleNewBook.bind(this)} updatebook={this.handleUpdateBook.bind(this)}/>
+                        <NewEditModal data={this.state} 
+                            toggle={this.toggleEditBook.bind(this)} 
+                            addnew={this.handleNewBook.bind(this)} 
+                            updatebook={this.handleUpdateBook.bind(this)}/>
                         {/* <NewEditModal/> */}
                      </tbody>
                  </Table>
