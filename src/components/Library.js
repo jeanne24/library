@@ -64,7 +64,7 @@ class Library extends Component{
         return(
             <div className="bookContainer text-center">
                 <h2>Book Borrowing App</h2>
-                <Button outline color="secondary" className="mb-4" onClick={this.toggleNewBook}>Add New Book</Button>
+                <Button outline color="secondary" className="mb-4" onClick={this.toggleNewBook.bind(this)}>Add New Book</Button>
                 <Table>
                     <tbody>
                         <Book data={this.state} toggle={this.toggle.bind(this)} toggleEdit = {this.toggleEditBook.bind(this)}/>
@@ -72,7 +72,8 @@ class Library extends Component{
                         <NewEditModal data={this.state} 
                             toggle={this.toggleEditBook.bind(this)} 
                             addnew={this.handleNewBook.bind(this)} 
-                            updatebook={this.handleUpdateBook.bind(this)}/>
+                            updatebook={this.handleUpdateBook.bind(this)}
+                            />
                         {/* <NewEditModal/> */}
                      </tbody>
                  </Table>
